@@ -117,7 +117,7 @@ class Airplane {
       return`Hello my name is ${this.name}, I am from ${this.location}`;
     }
   }
-  
+
   /*
     TASK 4
       - Write an Instructor class extending Lambdasian.
@@ -143,8 +143,8 @@ class Airplane {
    demo(subject){ 
      return `Today we are learning about ${subject}`;
    }
-   grade(student, subject){ // cannot grade student
-     returns `${student.name} receives a perfect score on ${subject}`;
+   grade(student, subject){ // FAILING cannot GRADE STUDENT
+     return `${student.name} receives a perfect score on ${subject}`;
    }
  }
   /*
@@ -176,10 +176,10 @@ class Airplane {
        return `${this.favSubjects}`
      }
      PRAssignment(){
-       returns `${student.name} has submitted a PR for ${this.subject}`;
+       return `${student.name} has submitted a PR for ${this.subject}`;
      }
      sprintChallenge(){
-       returns `${student.name} has begun sprint challenge on ${this.subject}`;
+       return `${student.name} has begun sprint challenge on ${this.subject}`;
      }
  }
   
@@ -203,11 +203,11 @@ class Airplane {
        this.gradClassName = attrs.gradClassName;
        this.favInstructor = attrs.favInstructor;
      }
-     standUp(slackChannel){
-     returns `${this.name} announces to ${channel}, @channel standy times!`
+     standUp(channel){
+     return `${this.name} announces to ${channel}, @channel standy times!`
      }
      debugsCode(studentObject){
-       returns `${this.name} debugs ${student.name}'s code on ${subject}`
+       return `${this.name} debugs ${student.name}'s code on ${subject}`
      }
  }
   /*
