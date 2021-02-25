@@ -47,17 +47,16 @@ class Airplane {
       this.age= age;
       this.stomach = [];
     }
-    eat(){
-      if(stomach.length < 10){
-        
+    eat(edible){
+      if(this.stomach.length < 10){
+        this.stomach.push(edible);
       }
-
     }
     poop(){
-      // add code here
+      this.stomach = [];
     }
     toString(){
-      // add code here
+      return `${this.name}, ${this.age}`;
     }
   }
   
