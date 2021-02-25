@@ -174,6 +174,7 @@ class Airplane {
       - Student instances have the following methods:
           + `listSubjects` a method that returns all of the student's favSubjects in a single string: `Loving HTML, CSS, JS!`.
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
+
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
  class Student extends Lambdasian{
@@ -186,11 +187,11 @@ class Airplane {
      listSubjects(){
        return `${this.favSubjects}`
      }
-     PRAssignment(subject){ //<--- recieves a subject as an argument
-       return `${this.student.name} has submitted a PR for ${subject}`;
+     PRAssignment(subject){ 
+       return `${this.name} has submitted a PR for ${subject}`;
      }
-     sprintChallenge(){
-       return `${student.name} has begun sprint challenge on ${this.subject}`;
+     sprintChallenge(subject){
+       return `${this.name} has begun sprint challenge on ${subject}`;
      }
  }
  const personThree = new Student({
