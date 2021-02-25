@@ -129,6 +129,7 @@ class Airplane {
       - The constructor calls the parent constructor passing it what it needs.
       - The constructor should also initialize `specialty`, `favLanguage` and `catchPhrase` properties on the instance.
       - Instructor instances have the following methods:
+
           + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
@@ -139,18 +140,24 @@ class Airplane {
      this.favLanguage = attrs.favLanguage;
      this.catchPhrase = attrs.catchPhrase;
    }
-   
-
+   demo(subject){ // cannot demo correctly -- subject should be a 'string'
+     return `Today we are learning about ${this.subject}`;
+   }
+   grade(student){ // cannot grade student
+     returns `${student.name} receives a perfect score on ${this.subject}`;
+   }
  }
   /*
     TASK 5
       - Write a Student class extending Lambdasian.
-      - Its constructor takes a single argument -  an object with the following keys:
+      - Its constructor takes a single argument -  an object with the following keys: --- attrs
           + All the keys used to initialize instances of Lambdasian.
           + `previousBackground` i.e. what the Student used to do before Lambda School
           + `className` i.e. CS132
           + `favSubjects`. i.e. an array of the student's favorite subjects ['HTML', 'CSS', 'JS']
+
       - The constructor calls the parent constructor passing to it what it needs.
+
       - The constructor should also initialize `previousBackground`, `className` and `favSubjects` properties on the instance.
 
       - Student instances have the following methods:
@@ -161,9 +168,18 @@ class Airplane {
  class Student extends Lambdasian{
      constructor(attrs){
        super(attrs);
-       this.perviousBackground = attrs.perviousBackground;
+       this.previousBackground = attrs.previousBackground;
        this.className = attrs.className;
        this.favSubjects = attrs.favSubjects;
+     }
+     listSubjects(){
+       return `${this.favSubjects}`
+     }
+     PRAssignment(subject){
+       returns `${student.name} has submitted a PR for ${this.subject}`;
+     }
+     sprintChallenge(){
+       returns `${student.name} has begun sprint challenge on ${subject}`;
      }
  }
   
