@@ -140,11 +140,11 @@ class Airplane {
      this.favLanguage = attrs.favLanguage;
      this.catchPhrase = attrs.catchPhrase;
    }
-   demo(subject){ // cannot demo correctly -- subject should be a 'string'
-     return `Today we are learning about ${this.subject}`;
+   demo(subject){ 
+     return `Today we are learning about ${subject}`;
    }
-   grade(student){ // cannot grade student
-     returns `${student.name} receives a perfect score on ${this.subject}`;
+   grade(student, subject){ // cannot grade student
+     returns `${student.name} receives a perfect score on ${subject}`;
    }
  }
   /*
@@ -175,11 +175,11 @@ class Airplane {
      listSubjects(){
        return `${this.favSubjects}`
      }
-     PRAssignment(subject){
+     PRAssignment(){
        returns `${student.name} has submitted a PR for ${this.subject}`;
      }
      sprintChallenge(){
-       returns `${student.name} has begun sprint challenge on ${subject}`;
+       returns `${student.name} has begun sprint challenge on ${this.subject}`;
      }
  }
   
