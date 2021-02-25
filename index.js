@@ -66,13 +66,17 @@ class Airplane {
       - All instances built with Car:
           + should initialize with a `tank` at 0---- this.tank= 0; //passed
           + should initialize with an `odometer` at 0 ---- this.odometer =0; // passed
+
       - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`. // passed
 
       - Give cars ability to `.drive(distance)`. The distance driven: // passed
-          + Should cause the `odometer` to go up. // passed
+          + Should cause the `odometer` to go up. // passed this.tank - gallons
+
           + Should cause the the `tank` to go down taking `milesPerGallon` into account.
+          - this.tank = this.tank - milesPerGallon; 
+
       - A car which runs out of `fuel` while driving can't drive any more distance:
-          + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
+          + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`. ---> if statement?, if(this.tank === 0) this.tank = 0;
   */
   
  class Car {
@@ -87,11 +91,19 @@ class Airplane {
     return this.tank;
    }
    drive(distance){
-     this.odometer = this.odometer + distance;
-     this.tank = this.tank - this.milesPerGallon; // I'M PRETTY SURE MY COMMON SENSE IS FAILING ME
- 
-   }
+    //  this.odometer = this.odometer + distance;
+    //  this.tank = this.tank - (distance / this.milesPerGallon); 
+     const drivableMiles = this.tank * this.milesPerGallon;
+     if (distance <= drivableMiles) {
+      this.odometer = this.odometer + distance;
+      this.tank = this.tank - (distance / this.milesPerGallon)
+    } else {
+      this.odometer = this.odometer + drivableMiles;
+      this.tank = 0;
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }
 
+   }
   }
   
   /*
