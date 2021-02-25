@@ -62,20 +62,35 @@ class Airplane {
   
   /*
     TASK 2
-      - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
+      - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.---> constructor model, milesPerGallon// passed
       - All instances built with Car:
-          + should initialize with a `tank` at 0
-          + should initialize with an `odometer` at 0
-      - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`.
-      - Give cars ability to `.drive(distance)`. The distance driven:
-          + Should cause the `odometer` to go up.
+          + should initialize with a `tank` at 0---- this.tank= 0; //passed
+          + should initialize with an `odometer` at 0 ---- this.odometer =0; // passed
+      - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`. // passed
+
+      - Give cars ability to `.drive(distance)`. The distance driven: // passed
+          + Should cause the `odometer` to go up. // passed
           + Should cause the the `tank` to go down taking `milesPerGallon` into account.
       - A car which runs out of `fuel` while driving can't drive any more distance:
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
  class Car {
-    
+   constructor(model, milesPerGallon){
+     this.model= model;
+     this.milesPerGallon = milesPerGallon;
+     this.tank = 0;
+     this.odometer = 0;
+   }
+   fill(gallons) { 
+    this.tank = this.tank + gallons;
+    return this.tank;
+   }
+   drive(distance){
+     this.odometer = this.odometer + distance;
+     this.tank = this.milesPerGallon - distance; // I'M PRETTY SURE MY COMMON SENSE IS FAILING ME
+   }
+
   }
   
   /*
@@ -85,13 +100,22 @@ class Airplane {
           + name
           + age
           + location
+
       - Its constructor should initialize `name`, `age` and `location` properties on the instance.
+
       - Instances of Lambdasian should be able to `.speak()`:
           + Speaking should return a phrase `Hello my name is {name}, I am from {location}`.
           + {name} and {location} of course come from the instance's own properties.
   */
  class Lambdasian {
-    
+    constructor(name, age, location){
+    this.name .name;
+    this.age = age;
+    this.location= location;
+    }
+    speak(){
+      return`Hello my name is ${this.name}, I am from ${this.location}`;
+    }
   }
   
   /*
